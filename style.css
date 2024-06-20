@@ -128,10 +128,11 @@ body {
     display: flex;
     justify-content: center;
     font-family: "Titan One", sans-serif;
-    font-size: 2rem;
+    font-size: 1.8rem;
     flex-direction: column;
     perspective: 1000px;
     margin-left: 91px;
+    margin-top: -93px;
 }
 .title .happy, .title .birthday{
     position: relative;
@@ -230,7 +231,7 @@ body {
 .name{
     position: absolute;
     padding: 0px 14px;
-    bottom: 37px;
+    bottom: 64px;
     border: 3px solid var(--color-black);
 }
 .date__of__birth span, .name span{
@@ -257,6 +258,7 @@ body {
     position: relative;
     width: 300px;
     height: 300px;
+    top: -65px;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -500,7 +502,7 @@ body {
     height: 100%;
     background-color: var(--color-bg-letter);
     border-radius: 10px;
-    padding-top: 0px;
+    padding-top: 19px;
 }
 .letter__border .letter .title__letter{
     text-align: center;
@@ -598,7 +600,7 @@ body {
     margin-top: 60px;
     padding: 20px 0px 10px 11px;
     font-family: 'Dancing Script', cursive;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 .content__letter .right #mewmew{
     position: absolute;
