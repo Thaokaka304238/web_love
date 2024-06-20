@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List with Vue.js</title>
+    <!-- Link to Vue.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link rel="stylesheet" href="styles.css"> <!-- CSS file for styling -->
+</head>
+<body>
+    <div id="orientation-warning" class="orientation-warning">
+        <p>Vợ yêu vui lòng xoay ngang điện thoại của vợ để sử dụng trang web này.</p>
+    </div>
+    <div id="app">
+        <h3 id="responsive-heading">Chào người đẹp, hãy nhập thông tin ở đây nha</h3>
+        <form @submit.prevent="addTask">
+            <input type="text" v-model="newTask" placeholder="Bé iuu của anh" id="todoInput">
+            <input type="password" id="todoDate" placeholder="Anh iu em">
+            <button type="button" id="surpriseButton">Nhận bất ngờ</button>
+        </form>
+        
+    </div>
+
+    <script src="scripts.js"></script> <!-- Vue.js script -->
+    <script>
+        document.getElementById('surpriseButton').addEventListener('click', function() {
+            window.location.href = 'letter.html';
+        }); 
+        function isMobileDevice() {
+            return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+        }
+
+        function checkOrientation() {
+            if (isMobileDevice()) {
+                if (window.innerHeight > window.innerWidth) {
+                    document.getElementById('orientation-warning').style.display = 'flex';
+                    document.getElementById('app').style.display = 'none';
+                } else {
+                    document.getElementById('orientation-warning').style.display = 'none';
+                    document.getElementById('app').style.display = 'block';
+                }
+            }
+        }
+
+        function changeHeading() {
+            const heading = document.getElementById('responsive-heading');
+            if (window.innerWidth <= 933) {
+                const newHeading = document.createElement('h5');
+                newHeading.innerHTML = heading.innerHTML;
+                newHeading.id = 'responsive-heading';
+                heading.parentNode.replaceChild(newHeading, heading);
+            } else {
+                const newHeading = document.createElement('h3');
+                newHeading.innerHTML = heading.innerHTML;
+                newHeading.id = 'responsive-heading';
+                heading.parentNode.replaceChild(newHeading, heading);
+            }
+        }
+
+        window.addEventListener('resize', function() {
+            checkOrientation();
+            changeHeading();
+        });
+
+        window.addEventListener('load', function() {
+            checkOrientation();
+            changeHeading();
+        });
+    </script>
+</body>
+</html>

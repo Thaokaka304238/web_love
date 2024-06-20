@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('images/love.jpg');
+    background-size: cover; /* Đảm bảo hình nền bao phủ toàn bộ màn hình */
+    background-repeat: no-repeat; /* Đảm bảo hình nền không lặp lại */
+    background-position: center center; /* Đảm bảo hình nền được căn giữa */
+    height: 100vh; /* Đảm bảo chiều cao của body là 100% chiều cao viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+  
+#app {
+    max-width: 376px;
+    padding: 20px;
+    height: 274px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(251, 250, 250, 0.5); /* Nền trắng mờ */
+    text-align: center; /* Căn giữa nội dung bên trong */
+    position: absolute;
+    top: 62%; /* Điều chỉnh vị trí từ trên xuống */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Căn giữa theo chiều ngang */
+}
+
+h3 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Căn dọc các phần tử bên trong form */
+    align-items: center; /* Căn giữa các phần tử bên trong form */
+    margin: 20px 50px;
+}
+  
+input[type="text"],
+input[type="password"],
+button {
+    margin-bottom: 10px; /* Khoảng cách giữa các phần tử */
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 100%; /* Đảm bảo các input và button có cùng chiều rộng */
+    max-width: 400px; /* Giới hạn chiều rộng tối đa */
+}
+
+button {
+    background-color: #FFB6C1;
+    color: #fff;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    border-color: #FFB6C1;
+    cursor: pointer;
+    border-radius: 8px;
+    max-width: 250px !important;
+}
+
+button:hover {
+    background-color: #FF69B4;
+    border-color: #FF69B4;
+}
+
+.orientation-warning {
+    display: flexbox;
+    flex-direction: column;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    justify-content: center;
+    text-align: center;
+    margin: auto 10px;
+}
+
+@media only screen and (max-width: 933px) {
+  
+    #app {
+      width: 24%; /* Điều chỉnh chiều rộng để phù hợp với màn hình nhỏ */
+      height: 155px;
+      max-width: none; /* Bỏ giới hạn chiều rộng tối đa */
+      padding: 15px; /* Giảm padding để phù hợp với màn hình nhỏ */
+      top: 63%; /* Giữ vị trí giữa màn hình */
+      transform: translate(-50%, -50%);
+    }
+  
+    input[type="text"],
+    input[type="password"],
+    button {
+      max-width: 100%; /* Đảm bảo các input và button có chiều rộng đầy đủ trên thiết bị nhỏ */
+      padding: 6px 15px;
+    }
+  
+    button {
+      max-width: 100%;
+      font-size: 12px;
+      
+    }
+    button:hover {
+        background-color: #FF69B4;
+        border-color: #FF69B4;
+    }
+    #responsive-heading {
+        margin-top: -5px;
+    }
+}
