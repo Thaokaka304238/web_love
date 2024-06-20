@@ -486,7 +486,7 @@ body {
 .letter__border .close{
     position: absolute;
     right: -10px;
-    top: 7px;
+    top: 34px;
     width: 30px;
     height: 30px;
     background-color: var(--color-white);
